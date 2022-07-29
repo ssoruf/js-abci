@@ -4,7 +4,7 @@
   "description": "Tendermint ABCI server",
   "main": "index.js",
   "scripts": {
-    "test": "standard src/*.js test/*.js && nyc ava test/connection.js test/server.js test/integration.js",
+    "test": "standard --fix src/*.js test/*.js && nyc ava test/connection.js test/server.js test/integration.js",
     "build": "pbjs -t static-module -w commonjs -o types.js proto/*.proto && pbts -o index.d.ts types.js"
   },
   "keywords": [
@@ -16,9 +16,10 @@
   "author": "Matt Bell <mappum@gmail.com>",
   "license": "MIT",
   "dependencies": {
+    "abci": "^5.0.1",
     "bl": "^1.2.2",
     "debug": "^3.1.0",
-    "protobufjs": "^6.8.8",
+    "protobufjs": "^6.11.3",
     "protocol-buffers-encodings": "^1.1.0"
   },
   "devDependencies": {
@@ -27,7 +28,7 @@
     "nyc": "^15.0.0",
     "standard": "^11.0.1",
     "tempy": "^0.2.1",
-    "tendermint-node": "^5.2.0"
+    "tendermint-node": "github:ssoruf/tendermint-node"
   },
   "directories": {
     "example": "example",
